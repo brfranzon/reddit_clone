@@ -1,0 +1,35 @@
+<div class="container border mt-5">
+    <div class="row">
+
+      <div class="col-sm-3 border-right d-flex text-center color">
+        <div class="value ml-2 align-self-center">
+            <h2>
+                {{ article.votes }}
+            </h2>
+        </div>
+        <div class="ml-2 align-self-center">
+            Points
+        </div>
+      </div>
+
+      <div class="col-sm-8">
+        <a class = "mb-5">
+            <strong>Title: </strong> {{ article.title }}
+        </a>
+        <br>
+        <div> ({{ article.domain() }}) </div>
+        <a href = "{{ article.link }}" target="_blanck">
+            <strong>URL:</strong> {{ article.link }}
+        </a>
+
+        <div class="row mt-4">
+            <div class="col-4"> <button (click) = "voteUp()" class="btn bg-info mb-1">Vote Up</button>
+            </div>
+            <div class="col-4"> <button (click) = "voteDown()" class="btn bg-info mb-1">Vote Down</button>
+            </div>
+          </div>
+       </div>
+  
+   </div>
+   </div>
+
