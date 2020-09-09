@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(){
    this.articles = [
-     new Article('Angular 2','http://angular.io',1),
+     new Article('Angular 2..','http://angular.io',1),
      new Article('Fullstack','http://fullstack.io',22),
      new Article('Angular Homepage','http://angular.io',13)
    ]
@@ -20,10 +20,16 @@ export class AppComponent {
 
   AddArticle(title: HTMLInputElement, link: HTMLInputElement){
      console.log(`The title is ${title.value} and the link is ${link.value}!`);
-     this.articles.push(new Article(title.value, link.value, 0));
-     title.value = "";
-     link.value = "";
-     return false;
+     if(title.value && link.value)
+     {
+      this.articles.push(new Article(title.value, link.value, 0));
+      title.value = "";
+      link.value = "";
+      return false;
+     }else{
+       console.log('LEER');
+     }
+    
   }
 
   sortedArticles(): Article[]{
